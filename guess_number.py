@@ -33,13 +33,15 @@ user_choice = start_message()
 
 while (user_choice.capitalize() == 'Y'):
     ##test_block
-    ##computer_number = test()
+    computer_number = test()
 
     user_number = validate_number (input_message()) ##get user number and validate it to INT
     
-    computer_number = random.randint(0,10) ##generate random number
+    ##computer_number = random.randint(0,10) ##generate random number
 
     while not compare_numbers(computer_number, user_number): ##compare and while not equals get user`s another number`
         user_number = validate_number(input_message())            
 
     user_choice = start_message()
+
+print('Exiting...')
