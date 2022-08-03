@@ -1,5 +1,6 @@
 import os
 import random
+from xml.dom import ValidationErr
 
 clear = lambda: os.system('cls')
 
@@ -20,8 +21,13 @@ def compare_numbers (num1: int, num2: int):
         return 0
 
 def validate_number(number):
-    if number.isnumeric():
-        return int(number)
+    valid = False
+    while not valid:
+        try:
+            number = int(number)
+        except:
+            print('Incorrect input!')
+        valid = True
 
 def test():
     number = random.randint(0,10)
